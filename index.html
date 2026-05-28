@@ -4,6 +4,15 @@
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<form>
+  <input type="text" placeholder="Username">
+
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAADYBt5YXYk-K4L8e"></div>
+
+  <button type="submit">Submit</button>
+</form>
 <body>
     <form>
         <div id="login">
