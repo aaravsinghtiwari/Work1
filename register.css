@@ -1,0 +1,67 @@
+body{
+    background-image: url(jonatan-pie-3l3RwQdHRHg-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+label{
+     color: aliceblue;
+   
+    top: 45%;
+    left: 39.5%;
+    font-style: italic;
+}
+
+#email1{
+    width: 202px;
+    border-radius: 20px;
+}
+
+#pass1{
+     border-radius: 20px;
+}
+
+input{
+    background-color: transparent;
+    border-color: orange;
+    color: orange;
+ }
+
+ button{
+    display: block;
+    margin: auto;
+    background-color: transparent;
+    border-color: orange;
+    color: wheat;
+    border-radius: 20px;
+}
+
+h1{
+    font-style: italic;
+    left: 43%;
+    top: 33%;
+    color: aqua;
+    text-align: center;
+
+}
+
+#login{
+     border: 2px solid aqua;
+    border-radius:  20px;
+    padding: 70px;  
+    width: 300px;
+    position: absolute;
+    top: 25%;
+    left: 38%;
+    height: 325px;
+    background: rgba(0, 0, 0, 0.4)
+}
+
+a{
+    color: aqua;
+    transition: 0.3s;
+}
+
+a:hover{
+    color: orange;
+}
