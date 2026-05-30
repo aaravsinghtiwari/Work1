@@ -9,14 +9,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGO_URL)
-.then(() => {
+// MongoDB Connection for Vercel
+let isConnected = false;
+
+async function connectDB() {
+    if (isConnected) return;
+
+    await mongoose.connect(process.env.MONGO_URL);
+    isConnected = true;
     console.log("MongoDB Connected");
-})
-.catch((err) => {
-    console.log(err);
-});
+}
 
 // User Schema
 const UserSchema = new mongoose.Schema({
@@ -41,6 +43,8 @@ app.get("/", (req, res) => {
 // Register Route
 app.post("/register", async (req, res) => {
     try {
+        await connectDB();
+
         const { email, password } = req.body;
 
         const existingUser = await User.findOne({ email });
@@ -75,6 +79,5 @@ app.post("/register", async (req, res) => {
         });
     }
 });
-
-// Start Server
+//server start
 module.exports = app;
